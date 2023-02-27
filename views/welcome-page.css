@@ -1,0 +1,89 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#alternativesContainer {
+  border: 2px solid gray;
+  border-radius: 6px;
+  padding: 8px;
+  background: var(--bg-clr1);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 3px;
+  max-width: 400px;
+  max-height: 500px;
+  height: 80%;
+  width: 80%;
+}
+
+.alternativeContainer {
+  border: 3px solid gray;
+  border-radius: 10px;
+  padding: 9px;
+  background: var(--bg-clr2);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--text-clr);
+  font-weight: 700;
+  width: 96%;
+}
+
+.alternativeContainer button {
+  width: 70px;
+  border: none;
+  height: 30px;
+  color: whitesmoke;
+  font-size: 13px;
+  border-radius: 2px;
+  font-weight: 700;
+  transition: 0.3s;
+  transition: border 0.05s;
+}
+
+#signupbutton {
+  background: var(--accent-clr1);
+}
+
+#signupbutton:hover {
+  background: transparent;
+  border: 2px solid var(--accent-clr1);
+  color: var(--accent-clr1);
+  border-radius: 0px;
+}
+
+#loginbutton {
+  background: var(--accent-clr);
+}
+
+#loginbutton:hover {
+  background: transparent;
+  border: 2px solid var(--accent-clr);
+  color: var(--accent-clr);
+  border-radius: 0px;
+}
+
+#logoIMG {
+  width: 15%
+}
+
+#aboutUsContainer{
+  border: 3px solid gray;
+  border-radius: 10px;
+  padding: 35px;
+  color: var(--text-clr);
+  font-weight: 700;
+  width: 96%;
+  
+}
+
+#aboutUsList li {
+  font-size: 16px;
+  font-weight: 700;  
+}

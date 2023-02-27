@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+      link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+      meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      title Qsuy Welcome
+      style
+          include all.css
+          include welcome-page.css
+  body
+      #alternativesContainer
+          img(src="https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525")#logoIMG
+          h2 Get stared In Seconds!
+          .alternativeContainer
+              p New Around? Make an Account in 5 seconds!
+              button(onclick="window.location.replace('/register')")#signupbutton Sign Up!
+          .alternativeContainer
+              p Already have an account?
+              button(onclick="window.location.replace('/login')")#loginbutton Log In!
+          #aboutUsContainer
+              ul#aboutUsList
+                li Connect with all your friends
+                li Join engaging communities
+                li Find the latest trends
+                

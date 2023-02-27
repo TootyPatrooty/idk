@@ -1,0 +1,58 @@
+html(lang="en")
+  head
+    link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+    title #{username}
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style
+        include profile.css
+        include all.css
+        include postcss.css
+        include feed.css
+  body
+    #mainArea
+      #profileHeader
+        #profileHeaderNameContainer
+          img#profileHeaderPfp(src=`${pfp}`)
+          h1#profileHeaderName #{username}
+        #profileHeaderStatsContainer
+          #profileHeaderFollowing
+            .profileStatTitle Following
+            .profileStat #{following}
+          #profileHeaderFollowers
+            .profileStatTitle Followers
+            .profileStat #{followers}
+          #profileHeaderPosts
+            .profileStatTitle Posts
+            .profileStat #{posts.length}
+      #feed
+        each post in posts     
+          .aPostInTheFeed(id=`postInTheFeed-${post.id}`)
+            .aPostInTheFeedUserArea
+              .aPostInTheFeedProfile
+                img(onclick="window.location.href='/p/${post.author_username}'" src=`${pfp}`)
+                a.aPostInTheFeedProfileName(href='/p/${post.author_username}') #{post.author_username}
+                if (post.community != null)
+                  .aPostCommunityTag(onclick=`window.location.href='/c/${post.community}'` style='background: #f0a0a5;') #{post.community}
+                .aPostInTheFeedDate #{post.timestamp}
+            .aPostInTheFeedHeaderArea #{post.header}
+            .aPostInTheFeedTextArea #{post.content}
+            .aPostInTheFeedImgArea
+              each image in post.images
+                img.aPostInTheFeedImg(src=`${image}`)
+            .aPostInTheFeedButtonArea
+              button(onclick=`interactPost(1, '${post.id}')`)
+                img.aPostInTheFeedButton(src='https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/like-0.svg?v=1675622120936')
+              .aPostInTheFeedCounter(id=`like-${post.id}`) 1
+              button(onclick=`interactPost(2, '${post.id}')`)
+                img.aPostInTheFeedButton(src='https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/dislike-0.svg?v=1675622120936')
+              .aPostInTheFeedCounter(id=`dislike-${post.id}`) 0
+              button(onclick=`window.location.href='/p/${post.author_username}/${post.id}'`)
+                img.aPostInTheFeedButton(src='https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/comment.svg?v=1675622120936')
+              .aPostInTheFeedCounter(id=`comment-${post.id}`) x
+              button(onclick=`interactPost(3, '${post.id}')`)
+                img.aPostInTheFeedButton(src='https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/share.svg?v=1675622120936')
+              .aPostInTheFeedCounter(id=`share-${post.id}`)
+  script
+      include main.js

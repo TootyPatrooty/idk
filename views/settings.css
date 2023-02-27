@@ -1,0 +1,98 @@
+#everything {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#sidebar {
+  display: flex;
+  height: 100%;
+  width: 100px;
+}
+
+#mainSettings {
+  display: flex;
+  flex-direction: column;
+}
+
+.aSetting {
+  border: 1px solid gray;
+  background: #efefef;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.aSettingHeader {
+  font-weight: 700;
+  color: #a8454a;
+}
+
+.aSettingDescription {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.aSettingDemoArea {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+#profilePicture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#profileName {
+  font-size: 17px;
+  font-weight: 700;
+  color: #a8454a;
+}
+
+#submitURLArea {
+  display: flex;
+  gap: 6px;
+}
+
+#newurlinput {
+  flex: 1;
+  border-radius: 7px;
+  padding: 3px;
+  border: none;
+}
+
+#submitURLButton {
+  border: none;
+  background: #a8454a;
+  color: whitesmoke;
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 4px 6px;
+}
+
+#newImgUploadButton {
+  height: 40px;
+  border: 2px solid lightgray;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: whitesmoke;
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+#newImgUploadButton:hover {
+  background: var(--accent-clr);
+  color: whitesmoke;
+  border-color: whitesmoke;
+}

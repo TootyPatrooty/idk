@@ -1,0 +1,31 @@
+html(lang="en")
+  head
+    link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+    title Gaffel Post
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style
+        include settings.css
+        include all.css
+  body
+    #header
+    #everything
+      #sidebar
+        .aSidebarAlternative General
+      #mainSettings
+        .aSetting
+          .aSettingHeader Update Profile Picture
+          .aSettingDescription Paste the address of your desired profile picture below here.
+          .aSettingDemoArea
+            img#profilePicture(src=`${pfp}`)
+            #profileName #{user}
+          #submitURLArea
+            input.aSettingInput#newurlinput(placeholder="Insert image link here")
+            button#submitURLButton(onclick=`updateProfilePicture(document.getElementById("newurlinput").value)`) Submit
+          #uploadIMGArea
+            input(type="file" accept="image/jpeg,image/png,image/webp" hidden="")#newImgUploadInput
+            #newImgUploadButton(onclick="document.getElementById('newImgUploadInput').click()") UPLOAD PFP
+  script
+      include settings.js
+      include main.js
