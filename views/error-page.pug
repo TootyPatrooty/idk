@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+      link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+      meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      title Gaffel Not Found
+      style
+          include all.css
+          include error-page.css
+  body
+      #error-div 
+        #error-text This page is unavailible right now
+        button#error-back-button(onclick="window.location.replace('/')") Back to Feed

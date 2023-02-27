@@ -1,0 +1,77 @@
+html(lang="en")
+  head
+    title Gaffel
+    link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style
+        include all.css
+        include feed.css
+        include postcss.css
+  body(onload="updateFeed(); loadCommunities(); loadFriendsList()")
+    #all-content-area 
+      #mobileBottomBar
+        button#mobileBottomBarFriends(onclick="openFeed()")
+          img(src="https://cdn-icons-png.flaticon.com/512/57/57419.png")
+        button#mobileBottomBarFriends(onclick="openSidepanel()")
+          img(src="https://www.pngmart.com/files/21/Admin-Profile-PNG-Isolated-File.png")
+      #settingsMenu
+        #settingsMenuTopBar
+          #settingsMenuHeader Settings
+          button#settingsMenuCloseButton(onclick='document.getElementById("settingsMenu").style.display = "none"') &times;
+        .aSettingCategory(onclick=`window.location.href='/p/${username}'`) Your Profile
+        .aSettingCategory(onclick=`window.location.href = '/settings'`) Settings
+        .aSettingCategory
+        button#settingsMenuLogOutButton(onclick="window.location.replace('/logOut')") Log Out
+      #createCommunityMenu.hoverWindow
+        #createCommunityHeaderArea
+          h1 Create A Community!
+          button(onclick="document.getElementById('createCommunityMenu').style = null") &times;
+        #createCommunityMainArea
+          #createCommunityPfpArea
+            #createCommunityPfp C
+          #createCommunityInputArea
+            input#createCommunityName(placeholder="Name" oninput=`document.getElementById("createCommunityPfp").innerText = document.getElementById('createCommunityName').value[0]; document.getElementById("createCommunityPfp").style.background = ColorString(document.getElementById('createCommunityName').value)`)
+            input#createCommunityLeader(placeholder="Leader" value=`${username}` readonly="readonly")
+        #createCommunityDescAndBtnArea
+          textarea#createCommunityDesc(placeholder="Describe what this community is about..")
+          button#createCommunityBtn(onclick="createCommunity()") CREATE
+      #sidebar
+        #sidebarMyProfile
+          #sidebarMyProfileImgDiv
+            img#sidebarMyProfileImg(src=`${pfp}` onclick="openSettings()")
+          #sidebarMyProfileTextDiv #{username}
+          button(onclick="getNotifications()")#sidebarMyProfileNotificationsButton
+            img(src="https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/5ca7aef7-9c38-4896-82f6-141b927e3500.notifications-outline.svg?v=1668192837648")
+          #sidebarNotificationsArea
+        #sidebarFriendsTextArea FRIENDS
+        #sidebarFriendsArea
+      #mainArea
+        #feedTypeSelector
+          #standardFeedArea
+            button#feedTypeSelector1(onclick=`selectedFeed = "following"; communityName = null; updateFeed()`) Following
+            button#feedTypeSelector2(onclick=`selectedFeed = "trending"; communityName = null; updateFeed()`) Trending
+        #makePostContainer
+          #makePostHeaderAndSend
+            button#deselectNewPostButton(onclick=`deselectedNewPost()`)
+            input#makePostHeader(placeholder='Post to your Profile' onclick='clickedNewPost()')
+            button#makePostSendButton(onclick='makePost()')
+              | &gt;
+          textarea#makePostTextContent(placeholder='...')
+          #makePostImagePreviewArea.aPostInTheFeedImgArea
+          #makePostAlternativeContainer
+            input(type="file" onchange="displayUploadedImagesPreview()" accept="image/jpeg,image/png,image/webp" hidden="" multiple="")#makePostImageUploader
+            button(onclick="document.getElementById('makePostImageUploader').click()").makePostAlternative A
+        #feed
+      #secondSidebar 
+        button.openSearchButton(onclick="toggleSearchPanel(false)") Search
+        button#createCommunityButton(onclick="document.getElementById('createCommunityMenu').style.display = 'flex';") Create Community
+        #communitiesListArea
+          
+        #searchArea
+          button(onclick="toggleSearchPanel(true)").openSearchButton Back
+          input(oninput="QuickSearch()" placeholder="Search...")#searchInput
+          #searchResultArea
+  script
+      include main.js

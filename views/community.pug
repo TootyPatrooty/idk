@@ -1,0 +1,39 @@
+html(lang="en")
+  head
+    link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+    title C-#{name}
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    style
+        include community.css
+        include all.css
+        include postcss.css
+  body(onload=`document.getElementById("communityBannerPfp").style.background = ColorString('${name}'); communityName="${name}"; updateFeed()`)
+    #mainArea
+      #communityBanner
+        #communityBannerNameContainer
+          #communityBannerPfp #{name[0]}
+          #communityBannerName C-#{name}
+        #communityBannerDescription #{description}
+      #sortDiv
+        button.sortDivButton(onclick="selectedFeed = 'following'; updateFeed()")
+          img.sortDivButtonImg(src="https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/clock.svg?v=1675946434410")
+          .sortDivButtonText Recent
+        button.sortDivButton(onclick="selectedFeed = 'trending'; updateFeed()")
+          img.sortDivButtonImg(src="https://cdn.glitch.global/dcc9271c-71a4-4fc7-90e2-52d4f0d1d489/flame.svg?v=1675945928776")
+          .sortDivButtonText Popular
+      #makePostContainer
+          #makePostHeaderAndSend
+            button#deselectNewPostButton(onclick=`deselectedNewPost()`)
+            input#makePostHeader(placeholder=`POST to C-${name}` onclick='clickedNewPost()')
+            button#makePostSendButton(onclick='makePost()')
+              | &gt;
+          textarea#makePostTextContent(placeholder='...')
+          #makePostImagePreviewArea.aPostInTheFeedImgArea
+          #makePostAlternativeContainer
+            input(type="file" onchange="displayUploadedImagesPreview()" accept="image/jpeg,image/png,image/webp" hidden="" multiple="")#makePostImageUploader
+            button(onclick="document.getElementById('makePostImageUploader').click()").makePostAlternative A
+      #feed
+  script
+      include main.js

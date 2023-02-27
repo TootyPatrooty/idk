@@ -1,0 +1,202 @@
+.aPostInTheFeed {
+  padding: 10px 16px;
+  margin:  15px;
+  border-radius: 6px;
+  color: #242f40;
+  background: #f7f7f7;
+  box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 10%);
+}
+
+.aPostInTheFeedProfile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.aPostCommunityTag {
+  padding: 5px 9px;
+  border-radius: 50vh;
+  color: #f7f7f7;
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.15s;
+}
+
+.aPostCommunityTag:hover {
+  cursor: pointer;
+  filter: brightness(105%);
+}
+
+.aPostInTheFeedProfileName {
+  color: var(--accent-clr);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.aPostInTheFeedProfileName:hover {
+  text-decoration: underline;
+}
+
+.aPostInTheFeedProfile img {
+  height: 35px;
+  object-fit: cover;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.aPostInTheFeedProfile img:hover {
+  cursor: pointer;
+  border: 2px solid var(--accent-clr);
+}
+
+.aPostInTheFeedHeaderArea {
+  font-weight: 700;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+
+.aPostInTheFeedTextArea {
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+.aPostInTheFeedImgArea {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+}
+
+.aPostInTheFeedImg {
+  border-radius: 6px;
+  border: 1px solid #d3d3d3;
+  height: 20vh;
+}
+
+.aPostInTheFeedButtonArea {
+  display: flex;
+}
+
+.aPostInTheFeedButtonArea button {
+  border-radius: 50%;
+  border: none;
+  transition: all 0.15s;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.aPostInTheFeedButtonArea button:active {
+  background: #d0cece;
+}
+
+.aPostInTheFeedButtonArea button:hover img {
+  padding: 5px;
+}
+
+.aPostInTheFeedButton {
+  height: 30px;
+  padding: 7px;
+  transition: all 0.11s;
+}
+
+.aPostInTheFeedButton img {
+  height: 100%;
+}
+
+.aPostInTheFeedCounter {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*MAKEPOSTCONTAINER*/
+
+#makePostContainer {
+  height: 47px;
+  border: 1px solid gray;
+  padding: 9px;
+  margin: 8px;
+  margin-top: 0;
+  border-radius: 8px;
+  background: var(--bg-clr2);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+#makePostHeaderAndSend {
+  display: flex;
+}
+
+#refreshButton {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: #242f40;
+  color: white;
+  font-size: 15px;
+}
+
+#deselectNewPostButton {
+  width: 0px;
+  border: none;
+  background: var(--accent-clr);
+  border-radius: 6px;
+  color: whitesmoke;
+  font-size: 23px;
+  transition: all 0.3s;
+}
+
+#makePostHeader {
+  padding: 1px 11px;
+  height: 28px;
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+}
+
+#makePostSendButton {
+  border: none;
+  border-radius: 6px;
+  background: var(--accent-clr);
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  width: 40px;
+  margin: 0 5px;
+}
+
+#makePostTextContent {
+  min-height: 105px;
+  resize: none;
+  flex: 1;
+  border: none;
+  border-radius: 3px;
+  padding: 8px;
+  display: none;
+}
+
+#makePostAlternativeContainer {
+  display: none;
+}
+
+.makePostAlternative {
+  height: 20px;
+  width: 20px;
+  color: var(--accent-clr);
+  border: 1px solid var(--accent-clr);
+  border-radius: 5px;
+}

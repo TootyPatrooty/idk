@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+  head
+      link(href='https://cdn.glitch.global/5d26fa02-c617-4836-9973-6d011efab6c6/gaffel-logo%20(1).png?v=1666893109525' rel="icon")
+      meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      title Qsuy Register
+      style
+          include all.css
+          include register.css
+  body
+      #registerContainer
+          h2 Sign Up In Seconds!
+          #registerUserForm
+            input(type="text" placeholder="Username").inputBox#username
+            input(type="password" placeholder="Password").inputBox#password
+            #registerScreen-statusMessage Unknown Error
+            button(onclick="AttemptRegister()")#registerButton Register
+          .alternativeContainer
+              a(href="/login")#loginbutton Already have an account?
+  script
+      include account.js

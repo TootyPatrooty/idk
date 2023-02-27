@@ -1,0 +1,31 @@
+:root {
+  --bg-clr: #ffffff;
+  --bg-clr1: #f2f2f2;
+  --bg-clr2: #ededed;
+  --bg-clr3: #CCCCCC;
+  --accent-clr: #A8454A;
+  --accent-clr1: #242f40;
+  --text-clr: #808080;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", calibri, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0px;
+}
+
+button:hover {
+  cursor: pointer;
+  filter: brightness(105%);
+}
+
+.hoverWindow {
+  position: fixed;
+  display: none;
+  z-index: 9;
+}
